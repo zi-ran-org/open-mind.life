@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#efefe0"/>
+      <stop offset="100%" style="stop-color:#e5e5d0"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="500" rx="16" fill="url(#bgGrad)"/>
+  <!-- Person silhouette in meditation pose -->
+  <g fill="#1f4e79" opacity="0.2" transform="translate(100, 120)">
+    <!-- Head -->
+    <circle cx="100" cy="40" r="35"/>
+    <!-- Body/shoulders -->
+    <ellipse cx="100" cy="120" rx="60" ry="45"/>
+    <!-- Crossed legs -->
+    <ellipse cx="100" cy="200" rx="90" ry="35"/>
+    <!-- Arms in meditation pose -->
+    <ellipse cx="30" cy="150" rx="25" ry="15" transform="rotate(-20, 30, 150)"/>
+    <ellipse cx="170" cy="150" rx="25" ry="15" transform="rotate(20, 170, 150)"/>
+    <!-- Hands on knees -->
+    <circle cx="25" cy="190" r="12"/>
+    <circle cx="175" cy="190" r="12"/>
+  </g>
+  <!-- Decorative circles -->
+  <circle cx="200" cy="250" r="120" fill="none" stroke="#1f4e79" stroke-width="1" opacity="0.1"/>
+  <circle cx="200" cy="250" r="150" fill="none" stroke="#1f4e79" stroke-width="1" opacity="0.08"/>
+  <!-- Text hint -->
+  <text x="200" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">
+    Bild hier ablegen
+  </text>
+  <text x="200" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6b7280" opacity="0.7">
+    Person in meditativer Pose
+  </text>
+</svg>
