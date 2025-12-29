@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
@@ -113,9 +113,9 @@
           </article>
         </div>
       </section>
-      <section id="gfk" class="sc-content">
+      <section id="gfk">
         <div class="hero-grid">
-          <div class="hero-text">
+          <div class="hero-text sc-content">
             <h2>Gewaltfreie Kommunikation</h2>
             <p>nach Marshall B. Rosenberg</p>
             <p>geb. 1934 † 2015</p>
@@ -136,7 +136,7 @@
               werden und potentiell gewaltvollen Strukturen begegnen können.
             </p>
           </div>
-          <div class="hero-image">
+          <div class="hero-images sc-content">
             <img
               alt=""
               style="width: 18.26299%"
@@ -417,18 +417,20 @@
                 2.-6. März 2026
               </strong>
             </p>
-            <details>
-              <summary>Mehr erfahren...</summary>
-              <p>Mensch da gibt's aber viel drüber zu sagen!</p>
-              <p>Und dann gibt's am Schluss auch immer noch unsere</p>
+            <div class="sc-html">
               <details>
-                <summary>Teilnehmerstimmen</summary>
-                <ul>
-                  <li>Ich fand's toll! (Teilnehmer)</li>
-                  <li>Ich auch! (ganz anderer Teilnehmer)</li>
-                </ul>
+                <summary>Mehr erfahren...</summary>
+                <p>Mensch da gibt's aber viel drüber zu sagen!</p>
+                <p>Und dann gibt's am Schluss auch immer noch unsere</p>
+                <details>
+                  <summary>Teilnehmerstimmen</summary>
+                  <ul>
+                    <li>Ich fand's toll! (Teilnehmer)</li>
+                    <li>Ich auch! (ganz anderer Teilnehmer)</li>
+                  </ul>
+                </details>
               </details>
-            </details>
+            </div>
             <p class="info">
               <strong>
                 2 Tage GFK - Einführungsseminar 
@@ -438,18 +440,20 @@
               <br />
               Termin wird bald bekannt gegeben! 
             </p>
-            <details>
-              <summary>Mehr erfahren...</summary>
-              <p>Mensch da gibt's aber viel drüber zu sagen!</p>
-              <p>Und dann gibt's am Schluss auch immer noch unsere</p>
+            <div class="sc-html">
               <details>
-                <summary>Teilnehmerstimmen</summary>
-                <ul>
-                  <li>Ich fand's toll! (Teilnehmer)</li>
-                  <li>Ich auch! (ganz anderer Teilnehmer)</li>
-                </ul>
+                <summary>Mehr erfahren...</summary>
+                <p>Mensch da gibt's aber viel drüber zu sagen!</p>
+                <p>Und dann gibt's am Schluss auch immer noch unsere</p>
+                <details>
+                  <summary>Teilnehmerstimmen</summary>
+                  <ul>
+                    <li>Ich fand's toll! (Teilnehmer)</li>
+                    <li>Ich auch! (ganz anderer Teilnehmer)</li>
+                  </ul>
+                </details>
               </details>
-            </details>
+            </div>
             <a
               href="#kontakt"
               class="btn-primary"
@@ -460,10 +464,10 @@
           </div>
         </article>
         <article class="card" id="coaching">
-          <div class="card-body sc-content">
+          <div class="card-body">
             <h2>Coaching / Paarcoaching</h2>
             <div class="hero-grid">
-              <div class="hero-text">
+              <div class="hero-text sc-content">
                 <p>
                   Ich unterstütze Sie (dich) empathisch darin, Raum für
                   Verständnis und Verbindung zu schaffen sowie Situationen,
@@ -498,7 +502,7 @@
                   >Termin vereinbaren</a
                 >
               </div>
-              <div class="hero-image">
+              <div class="hero-image sc-content">
                 <img
                   alt=""
                   style="width: 39.17379%"
@@ -717,9 +721,13 @@
         </div>
       </section>
       <section id="kontakt">
-        <h2>Kontakt</h2>
-        <p>Ich freue mich auf Ihre Nachricht und darauf, Sie kennenzulernen.</p>
-        <div class="card kontakt-card">
+        <div class="sc-content">
+          <h2>Kontakt</h2>
+          <p>
+            Ich freue mich auf Ihre Nachricht und darauf, Sie kennenzulernen.
+          </p>
+        </div>
+        <div class="card kontakt-card sc-content">
           <form id="kontakt-form" class="kontakt-form">
             <div class="form-group">
               <label for="form-subject">Betreff</label>
@@ -885,7 +893,9 @@
         padding: 0.4em 0.8em;
         margin: 0.2em 0.4em;
         border-radius: 0.8em;
-        transition: background-color 0.4s, color 0.4s;
+        transition:
+          background-color 0.4s,
+          color 0.4s;
         text-align: center;
         font-weight: 700;
       }
@@ -999,7 +1009,11 @@
       }
 
       .material-symbols-rounded {
-        font-variation-settings: "FILL" 0, "wght" 100, "GRAD" 200, "opsz" 48;
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 100,
+          "GRAD" 200,
+          "opsz" 48;
         vertical-align: middle;
         margin-right: 0.2em;
         position: relative;
@@ -1515,7 +1529,9 @@
         font-size: 1rem;
         font-family: inherit;
         background: var(--bg2);
-        transition: border-color 0.2s, box-shadow 0.2s;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
       }
 
       .form-group input:focus,
@@ -1638,7 +1654,7 @@
           if (body) body += "\n";
           // Create mailto URL
           const mailtoUrl = `mailto:gfk@open-mind.life?subject=${encodeURIComponent(
-            subject
+            subject,
           )}&body=${encodeURIComponent(body)}`;
           window.location.href = mailtoUrl;
         });
