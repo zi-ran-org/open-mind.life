@@ -82,7 +82,7 @@
     <section id="gfk">
       <div class="hero-grid">
         <div class="hero-text sc-content">
-          <h2>Gewaltfreie&nbsp;Kommunikation&nbsp;(GfK)</h2>
+          <h2>Gewaltfreie Kommunikation (GfK)</h2>
           <p><strong>nach Marshall B. Rosenberg, </strong>geb. 1934 † 2015<strong></strong></p>
           <p> <strong>Psychologe, Autor, Trainer, Mediator, Begründer der GFK</strong></p>
           <p class="blau"><em> „Das Ziel der Gewaltfreien Kommunikation ist nicht, Menschen und ihr Verhalten zu ändern,
@@ -273,7 +273,7 @@
           </div>
         </div>
       </article>
-      <article class="card" id="inhouse" style="text-align: justify;">
+      <article class="card justify-text" id="inhouse">
         <div class="card-body sc-content">
           <h2>Inhouse-Seminare</h2>
           <img alt="" style="width: 38.17664%" src="images/grundgefuehle-fotos-sc695042184fb6b-320.png"
@@ -319,7 +319,7 @@
             data-message="Ich hätte gerne mehr Informationen zu Inhouse-Seminaren.">Kontakt aufnehmen</a>
         </div>
       </article>
-      <article class="card" id="seminare" style="text-align: justify;">
+      <article class="card justify-text" id="seminare">
         <div class="card-body sc-content">
           <h2>Seminare &amp; Einführungen</h2>
           <img alt="" style="width:64.38746%;" src="images/sl371215-sc696452f2c4f28-320.jpg"
@@ -328,7 +328,6 @@
             methodisch, lebendig und spielerisch kennen. </p>
           <h4>Nächste Termine:</h4>
           <p class="info">
-            <br>
             <strong>5-Tage Gewaltfreie Kommunikation</strong>
             <br>
             <strong>
@@ -401,7 +400,7 @@
             data-message="Ich hätte gerne mehr Informationen zu Seminaren und Einführungen.">Kontakt aufnehmen</a>
         </div>
       </article>
-      <article class="card" id="coaching" style="text-align: justify;">
+      <article class="card justify-text" id="coaching">
         <div class="card-body sc-content">
           <h2>Coaching / Paarcoaching</h2>
           <p> Ich unterstütze Sie (dich) empathisch darin, Raum für Verständnis und Verbindung zu schaffen sowie
@@ -485,7 +484,7 @@
       <div class="card-grid">
         <article class="referenz-block card sc-content">
           <h3 style="text-align: center;">Gewaltfreie Kommunikation</h3>
-          <img alt="" style="width: 42.3221%; margin: 0 auto; display: block;"
+          <img alt="" style="width: 42.3221%; margin: 0 auto; display: block; margin-bottom: 1em;"
             src="images/y-k-netzwerk-banner-gfk-sc69504b61c3913-320.jpg"
             srcset=" images/y-k-netzwerk-banner-gfk-sc69504b61c3913-1280.jpg 1280w, images/y-k-netzwerk-banner-gfk-sc69504b61c3913-960.jpg 960w, images/y-k-netzwerk-banner-gfk-sc69504b61c3913-640.jpg 640w, images/y-k-netzwerk-banner-gfk-sc69504b61c3913-320.jpg 320w ">
           <details>
@@ -550,7 +549,7 @@
         </article>
         <article class="referenz-block card sc-content">
           <h3 style="text-align: center;">Yoga</h3>
-          <img alt="" style="width: 43.25843%; margin: 0 auto; display: block;"
+          <img alt="" style="width: 43.25843%; margin: 0 auto; display: block; margin-bottom: 1em;"
             src="images/y-k-gfk-referenzen-sc69504a1c350fd-320.jpg"
             srcset=" images/y-k-gfk-referenzen-sc69504a1c350fd-1280.jpg 1280w, images/y-k-gfk-referenzen-sc69504a1c350fd-960.jpg 960w, images/y-k-gfk-referenzen-sc69504a1c350fd-640.jpg 640w, images/y-k-gfk-referenzen-sc69504a1c350fd-320.jpg 320w ">
           <details>
@@ -1545,6 +1544,15 @@
         max-width: 400px;
         margin: 0 auto;
       }
+
+      .hero-grid > .sc-content {
+        text-align: center;
+      }
+
+      .hero-grid > .sc-content img {
+        margin: 0 auto;
+        display: block;
+      }
     }
 
     /* ========================================================================== Buttons ========================================================================== */
@@ -1870,6 +1878,17 @@
     .kontakt-card .info {
       margin-top: 1rem;
       font-size: 0.875rem;
+    }
+
+    /* ========================================================================== Text Alignment Utilities ========================================================================== */
+    .justify-text {
+      text-align: justify;
+    }
+
+    @media (max-width: 768px) {
+      .justify-text {
+        text-align: center;
+      }
     }
 
     /* ========================================================================== Impressum Section ========================================================================== */
