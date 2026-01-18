@@ -361,7 +361,7 @@
           </div>
         </article>
       </div>
-      <article class="card" id="gruppen">
+      <article class="card angebot-card" id="gruppen">
         <div class="uebungsgruppen-grid">
           <div class="card-body sc-content">
             <h2>GfK-Übungsgruppen</h2>
@@ -470,7 +470,7 @@
           </div>
         </div>
       </article>
-      <article class="card justify-text" id="inhouse">
+      <article class="card justify-text angebot-card" id="inhouse">
         <div class="card-body sc-content">
           <h2>Inhouse-Seminare</h2>
           <img alt="" style="width: 38.17664%" src="images/grundgefuehle-fotos-sc695042184fb6b-320.png"
@@ -516,7 +516,7 @@
             data-message="Ich hätte gerne mehr Informationen zu Inhouse-Seminaren.">Kontakt aufnehmen</a>
         </div>
       </article>
-      <article class="card justify-text" id="seminare">
+      <article class="card justify-text angebot-card" id="seminare">
         <div class="card-body sc-content">
           <h2>Seminare &amp; Einführungen</h2>
           <img alt="" style="width:64.38746%;" src="images/sl371215-sc696452f2c4f28-320.jpg"
@@ -597,7 +597,7 @@
             data-message="Ich hätte gerne mehr Informationen zu Seminaren und Einführungen.">Kontakt aufnehmen</a>
         </div>
       </article>
-      <article class="card justify-text" id="coaching">
+      <article class="card justify-text angebot-card" id="coaching">
         <div class="card-body sc-content">
           <h2>Coaching / Paarcoaching</h2>
           <p> Ich unterstütze Sie (dich) empathisch darin, Raum für Verständnis und Verbindung zu schaffen sowie
@@ -1509,6 +1509,8 @@
       color: var(--primary);
       margin-top: 0.25rem;
       margin-bottom: 0.5rem;
+      text-indent: -1.42em;
+      margin-left: 1.5em;
     }
 
     hr {
@@ -1742,11 +1744,11 @@
         margin: 0 auto;
       }
 
-      .hero-grid > .sc-content {
+      .angebot-card, .justify-text {
         text-align: center;
       }
 
-      .hero-grid > .sc-content img {
+      .angebot-card img {
         margin: 0 auto;
         display: block;
       }
