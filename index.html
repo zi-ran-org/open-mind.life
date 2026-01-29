@@ -302,7 +302,7 @@
                     </p>
                 </div>
                 <div class="sc-content" class="gruppen-image">
-                    <img alt="" style="width:55.57432%; display: block; margin-left: auto; margin-right: auto;"
+                    <img alt="" style="width:55.57432%;"
                         src="images/prozess-sc696cf183c357f-320.jpg"
                         srcset="images/prozess-sc696cf183c357f-1280.jpg 1280w,images/prozess-sc696cf183c357f-960.jpg 960w,images/prozess-sc696cf183c357f-640.jpg 640w,images/prozess-sc696cf183c357f-320.jpg 320w">
                 </div>
@@ -1923,13 +1923,15 @@
             display: none;
         }
 
-        .gruppen-image {
+        .gruppen-image img {
             position: relative;
             top: 3em;
+            display: block;
+            margin: 0 auto;
         }
 
         @media (max-width: 768px) {
-            .gruppen-image {
+            .gruppen-image img {
                 top: 0px;
                 order: 2;
             }
@@ -1942,7 +1944,7 @@
                 display: block;
             }
 
-            .desktoponly {
+            img.desktoponly {
                 display: none;
             }
         }
