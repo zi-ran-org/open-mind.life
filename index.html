@@ -398,9 +398,7 @@
                                 15 Euro / Termin
                             </p>
                         </div>
-                        <div class="sc-html">
-                            <details>
-                                <summary>Teilnehmerstimmen</summary>
+                        <p class="ausklapp-anfang">Teilnehmerstimmen</p>
                                 <h4>Maria</h4>
                                 <p class="zitat">
                                     GFK ist ein Prozess, der durch Worte nicht beschrieben werden kann (Empathie für
@@ -440,8 +438,7 @@
                                     <br>
                                     Annette erlebe ich als erfahrene, suchende Begleiterin auf diesem Weg. Sie lässt
                                 </p>
-                            </details>
-                        </div>
+                            <p class="ausklapp-ende">Ende Teilnehmerstimmen</p>
                     </div>
                     <div class="card-body sc-content">
                         <img alt="" class="desktoponly" style="width:87.12871%;"
@@ -535,8 +532,7 @@
                             2.-6. März 2026
                         </strong>
                     </p>
-                    <details>
-                        <summary>Mehr erfahren...</summary>
+                    <p class="ausklapp-anfang">Mehr erfahren...</p>
                         <p>Dieses Intensiv-Seminar ist ein Angebot des Sozialpädagogischen Fortbildungsinstitutes Berlin
                             Brandenburg (SFBB) für alle Interessierte, die in der Jugend-und Kinderarbeit beschäftigt
                             sind.</p>
@@ -570,7 +566,7 @@
                                 Lebens begegnen mit der Seminarnummer <a
                                     href="https://web.antragocloud.de/SFBB/prod/seminarportal_shop/Course/Overview/Index/RI-pageSize(5)page(18)?area=Course">8401/26</a></strong>
                         </p>
-                    </details>
+                    <p class="ausklapp-ende">Ende Mehr erfahren...</p>
                     <p class="info">
                         <strong>
                             2 Tage GFK - Einführungsseminar
@@ -580,8 +576,7 @@
                         <br>
                         <strong>7. und 8. September 2026</strong>
                     </p>
-                    <details>
-                        <summary>Mehr erfahren...</summary>
+                    <p class="ausklapp-anfang">Mehr erfahren...</p>
                         <p>Die Gewaltfreie Kommunikation ist eine Methode, die unser friedliches und nährendes
                             Miteinander zum Ziel hat. Sie sorgt für ein neues Bewusstsein über unsere (erlernten) Denk-
                             und Urteilsmuster, die oft zu Missverständnissen und Konflikten führen, bzw. ehrliche,
@@ -607,7 +602,7 @@
                         <a
                             href="https://www.ash-berlin.eu/weiterbildung/zentrum-fuer-weiterbildung/kurssuche/einzelansicht-kurs/?atyp=es&amp;uid=207.26">Auf
                             der Webseite der ASH anmelden</a>
-                    </details>
+                    <p class="ausklapp-ende">Ende Anmeldung</p>
                     <a href="#kontakt" class="btn-primary" data-subject="Anfrage Seminar / Einführung"
                         data-message="Ich hätte gerne mehr Informationen zu Seminaren und Einführungen.">Kontakt
                         aufnehmen</a>
@@ -633,9 +628,7 @@
                         <br>
                         65 Euro / 60 Minuten
                     </p>
-                    <div class="sc-html">
-                        <details>
-                            <summary>Teilnehmerstimmen</summary>
+                    <p class="ausklapp-anfang">Teilnehmerstimmen</p>
                             <h4>Gabriele</h4>
                             <p class="zitat">
                                 Ich möchte mich nochmal sehr herzlich für die Stunde am Dienstag bedanken.
@@ -663,8 +656,7 @@
                             <p>Annette begleitet mich dabei in mitfühlender Präsenz und hat die magische Gabe immer
                                 exakt die passenden Bilder und Anregungen zu finden, die mir auch nach dem Gespräch den
                                 Weg weisen.</p>
-                        </details>
-                    </div>
+                        <p class="ausklapp-ende">Ende Teilnehmerstimmen</p>
                     <a href="#kontakt" class="btn-primary" data-subject="Terminanfrage Coaching"
                         data-message="Ich möchte gerne einen Termin für Coaching vereinbaren.">Termin vereinbaren</a>
                 </div>
@@ -1335,6 +1327,37 @@
         <p> <small>© 2025 open <em>mind</em> • bewusst kommunizieren</small> </p>
         <p> Erstellt mit <a href="/admin.php" class="admin-link">❤️</a> für bewusste Kommunikation </p>
     </footer>
+    <script>
+        // replace content wrapped in p.ausklapp-anfang and p.ausklapp-ende with a details/summary element
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log('done');
+            if (window.sitecakeGlobals) return;
+            const ausklappAnfang = document.querySelectorAll("p.ausklapp-anfang");
+            console.log(ausklappAnfang);
+
+            ausklappAnfang.forEach((anfang, index) => {
+                    const details = document.createElement("details");
+                    const summary = document.createElement("summary");
+                    summary.innerHTML = anfang.innerHTML;
+                    details.appendChild(summary);
+
+                    let sibling = anfang.nextSibling;
+                    while (sibling) {
+                        const nextSibling = sibling.nextSibling;
+                        details.appendChild(sibling);
+                        sibling = nextSibling;
+                        if (sibling && sibling.classList && sibling.classList.contains("ausklapp-ende")) {
+                            sibling.remove();
+                            sibling = null;
+                        }
+                    }
+
+                    console.log(anfang, details);
+
+                    anfang.parentNode.replaceChild(details, anfang);
+            });
+        });
+    </script>
     <style>
         /* ========================================================================== Reset & CSS Variables ========================================================================== */
         nav *,
@@ -1569,6 +1592,33 @@
         }
 
         /* ========================================================================== SiteCake User Styles These styles appear in the SiteCake toolbar dropdown for editors. They require .sc-content parent selector to be recognized by SiteCake. ========================================================================== */
+        /* ausklappbarer Inhalt: Wrap content in p.ausklapp-anfang and p.ausklapp-ende to make it collapsible */
+        .sc-content p.ausklapp-anfang {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        .sc-content p.ausklapp-anfang::before {
+            content: "▶ Anfang Ausklappmenü";
+            display: inline-block;
+            margin-right: 0.5em;
+        }
+
+        .sc-content p.ausklapp-ende {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        .sc-content p.ausklapp-anfang::before {
+            content: "▶ Ende Ausklappmenü";
+            display: inline-block;
+            margin-right: 0.5em;
+        }
+
         /* info: Highlighted information box for dates, announcements */
         .sc-content p.info {
             padding: 0.5rem 1rem;
