@@ -1,0 +1,854 @@
+/* ========================================================================== Reset & CSS Variables ========================================================================== */
+nav *,
+main *,
+footer *,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: var(--fg);
+}
+
+:focus {
+    outline: none;
+}
+
+*[id] {
+    scroll-margin-top: 5.2rem;
+}
+
+:root {
+    --fg: #102839;
+    --fg-muted: #3b3240;
+    --bg: #ffeea4;
+    --bg2: #fff9c8;
+    --primary: #1f4e79;
+    --border: #d4d4c0;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --radius: 1rem;
+    --radius-full: 9999px;
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: "Open Sans", Arial, "Liberation Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ========================================================================== Navigation ========================================================================== */
+nav {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    padding: 1.4em;
+    background-color: var(--bg);
+    opacity: 0.95;
+    border-bottom: 1px solid var(--primary);
+    z-index: 50;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+nav > a:first-of-type {
+    line-height: 0.85;
+    flex-grow: 1;
+    font-size: 1.5em;
+    min-width: 0;
+    text-align: justify;
+}
+
+nav > a:first-of-type br.desktop-only {
+    display: inline;
+}
+
+nav .sc-nav {
+    display: contents;
+}
+
+nav .sc-nav a {
+    padding: 0.4em 0.8em;
+    margin: 0.2em 0.4em;
+    border-radius: 0.8em;
+    transition: background-color 0.4s, color 0.4s;
+    text-align: center;
+    font-weight: 700;
+}
+
+nav .sc-nav a.current,
+nav .sc-nav a:hover,
+nav .sc-nav a:focus {
+    background-color: var(--bg);
+}
+
+nav .sc-nav a.current {
+    color: var(--primary);
+}
+
+@media (max-width: 1050px) {
+    nav {
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        overflow: hidden;
+        max-height: 4em;
+        padding: 1.2em 1.4em;
+        transition: max-height 0.4s;
+    }
+
+    #nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.5em;
+        color: var(--fg);
+        padding: 0;
+        margin: 0;
+        line-height: 1;
+    }
+
+    nav.nav-open {
+        max-height: 25em;
+        opacity: 1;
+    }
+
+    nav > a:first-of-type {
+        flex: 1 0 calc(100% - 3rem);
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    nav > a:first-of-type br.desktop-only {
+        display: none;
+    }
+
+    nav > a:first-of-type em {
+        letter-spacing: -0.02rem;
+    }
+
+    nav .sc-nav a {
+        flex-basis: auto;
+        margin-right: 1em;
+        margin-top: 100em;
+    }
+
+    nav.nav-open .sc-nav a {
+        margin-top: 0.3em;
+    }
+}
+
+/* ========================================================================== Typography ========================================================================== */
+h1 {
+    line-height: 0.85;
+    font-size: 5em;
+    font-weight: 400;
+    text-align: justify;
+}
+
+h1 em {
+    letter-spacing: -0.02rem;
+}
+
+em {
+    color: var(--primary);
+    font-style: normal;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    transition: color 0.4s;
+    color: var(--primary);
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+summary {
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    text-indent: -1.42em;
+    margin-left: 1.5em;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 3rem 0;
+}
+
+small {
+    opacity: 0.6;
+    font-size: 0.875rem;
+}
+
+.material-symbols-rounded {
+    font-variation-settings: "FILL" 0, "wght" 100, "GRAD" 200, "opsz" 48;
+    vertical-align: middle;
+    margin-right: 0.2em;
+    position: relative;
+    top: -2px;
+}
+
+/* ========================================================================== Layout ========================================================================== */
+main {
+    max-width: 80rem;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+}
+
+section {
+    padding: 2rem 1.5rem;
+}
+
+section.centered {
+    text-align: center;
+}
+
+section.centered>p:not(.zitat),
+section.centered>.sc-content>p:not(.zitat) {
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+section.centered .kontakt-card>p:not(.zitat) {
+    text-align: left;
+}
+
+section p {
+    color: var(--fg-muted);
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+/* ========================================================================== SiteCake User Styles ========================================================================== */
+.sc-content p.ausklapp-anfang {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.sc-content p.ausklapp-anfang::before {
+    content: "▶ Anfang Ausklappmenü";
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.sc-content p.ausklapp-ende {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.sc-content p.ausklapp-ende::before {
+    content: "▶ Ende Ausklappmenü";
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.sc-content p.info {
+    padding: 0.5rem 1rem;
+    background: rgba(229, 229, 208, 0.3);
+    border-radius: 1rem;
+    color: var(--fg-muted);
+    line-height: 1.75;
+}
+
+.sc-content p.zitat {
+    font-size: 1.125rem;
+    font-style: italic;
+    color: var(--fg-muted);
+    padding: 2rem 3rem;
+    background: var(--bg2);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin: 2rem auto;
+    max-width: 48rem;
+}
+
+.sc-content p.groesser { font-size: 1.25rem; }
+.sc-content p.gross { font-size: 1.5rem; }
+.sc-content p.riesig { font-size: 2rem; }
+.sc-content p.kleiner { font-size: 0.875rem; }
+.sc-content p.klein { font-size: 0.75rem; }
+.sc-content p.blau { color: var(--primary); }
+.sc-content p.links { text-align: left; }
+.sc-content p.zentriert { text-align: center; }
+.sc-content p.rechts { text-align: right; }
+
+/* Section Backgrounds */
+#home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+footer {
+    padding: 3rem 1.5rem;
+    background: rgba(229, 229, 208, 0.3);
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer .admin-link {
+    text-decoration: none;
+    cursor: default;
+}
+
+/* ========================================================================== Hero Section ========================================================================== */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2rem 3rem;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.hero-text .tagline {
+    font-size: 1.125rem;
+    text-align: right;
+    opacity: 0.5;
+    height: 0px;
+    overflow-y: visible;
+}
+
+.hero-feature {
+    line-height: 1.6;
+    max-width: 32rem;
+}
+
+.hero-feature strong {
+    font-size: 1.25rem;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.hero-feature:not(:last-of-type) {
+    margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    grid-column: 1;
+}
+
+.hero-image {
+    grid-row: 1 / 3;
+    grid-column: 2;
+    text-align: center;
+    align-self: middle;
+    position: relative;
+}
+
+.hero-image img,
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.hero-grid details {
+    grid-column: 1;
+    margin-top: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-grid details {
+        grid-column: 1;
+    }
+
+    .hero-text {
+        grid-row: auto;
+        grid-column: auto;
+    }
+
+    .hero-buttons {
+        grid-row: auto;
+        grid-column: auto;
+    }
+
+    .hero-image {
+        grid-row: auto;
+        grid-column: auto;
+        max-width: 400px;
+        margin: 0 auto;
+        top: 0px;
+    }
+
+    .angebot-card,
+    .justify-text {
+        text-align: left;
+    }
+
+    .angebot-card img {
+        margin: 0 auto !important;
+        width: 100% !important;
+        display: block;
+    }
+}
+
+/* ========================================================================== Buttons ========================================================================== */
+.btn-primary,
+.btn-outline {
+    display: block;
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius-full);
+    font-size: 1.125rem;
+    text-align: center;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--bg2);
+}
+
+.btn-primary:hover {
+    background-color: rgba(31, 78, 121, 0.9);
+    color: var(--bg2);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--bg2);
+}
+
+/* ========================================================================== Cards ========================================================================== */
+.card {
+    background: var(--bg2);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+section>article.card {
+    max-width: 48rem;
+    margin: 2rem auto 0;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 2rem;
+    max-width: 80rem;
+    margin: 2rem auto 0;
+}
+
+.aktuelles-grid {
+    max-width: 64rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+}
+
+.card-grid .card {
+    padding: 2rem;
+    text-align: left;
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+.angebote-grid .card h3 {
+    height: 3em;
+    margin-bottom: 0.5rem;
+}
+
+.angebote-grid .card {
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.card-grid .card>a:last-child,
+.angebote-grid .card-body>a:last-child {
+    position: absolute;
+    bottom: 1rem;
+    text-align: left;
+}
+
+.card h3 {
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: var(--fg-muted);
+    margin-bottom: 1rem;
+}
+
+.card a:not(.btn-primary) {
+    color: var(--primary);
+}
+
+.card a:not(.btn-primary):hover {
+    text-decoration: underline;
+}
+
+.card-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.card-body p {
+    color: var(--fg-muted);
+    line-height: 1.75;
+}
+
+/* ========================================================================== Card Images (SiteCake editable) ========================================================================== */
+.card-image {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ========================================================================== Angebote Section ========================================================================== */
+.angebote-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 80rem;
+    margin: 2rem auto 0;
+    text-align: left;
+}
+
+.angebot {
+    overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+    .angebote-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 750px) {
+    .angebote-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        margin-top: 1rem;
+    }
+}
+
+.uebungsgruppen-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.mobileonly {
+    display: none;
+}
+
+.gfk-image {
+    text-align: center;
+}
+
+.gfk-image img {
+    position: relative;
+    top: 3em;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .gfk-image img {
+        top: 0px;
+        order: 1;
+    }
+
+    .uebungsgruppen-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #gruppen>div> :last-child {
+        margin-top: -5em;
+    }
+
+    .mobileonly {
+        display: block;
+    }
+
+    img.desktoponly {
+        display: none;
+    }
+}
+
+.termine-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.termine-list li {
+    background: rgba(229, 229, 208, 0.5);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+/* ========================================================================== Info Elements ========================================================================== */
+.meta-list {
+    list-style: none;
+    font-size: 0.875rem;
+}
+
+.meta-list li {
+    color: var(--fg-muted);
+    margin-bottom: 0.5rem;
+}
+
+ul li {
+    margin-left: 2rem;
+}
+
+.icon-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(31, 78, 121, 0.1);
+    border-radius: 50%;
+    color: var(--primary);
+    margin-right: 0.75rem;
+}
+
+/* ========================================================================== About Section ========================================================================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid>* {
+        min-width: 0;
+    }
+
+    .about-image {
+        order: 2;
+        max-width: min(300px, 100%);
+        margin: 0 auto;
+        margin-top: -2rem;
+    }
+}
+
+.about-content {
+    text-align: left;
+}
+
+.about-content h3 {
+    margin-bottom: 0.5rem;
+}
+
+.about-content p {
+    color: var(--fg-muted);
+}
+
+/* ========================================================================== Referenzen Section ========================================================================== */
+.referenz-block {
+    margin-bottom: 4rem;
+}
+
+.referenz-block h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.referenz-block h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.referenz-block p {
+    line-height: 1.75;
+    margin-bottom: 0.5rem;
+}
+
+/* ========================================================================== Kontakt Section ========================================================================== */
+.kontakt-card {
+    max-width: 40rem;
+    margin: 2rem auto 0;
+    padding: 2rem 3rem;
+    text-align: left;
+}
+
+.kontakt-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    color: var(--fg-muted);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) / 2);
+    font-size: 1rem;
+    font-family: inherit;
+    background: var(--bg2);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(31, 78, 121, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.kontakt-form .btn-primary {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+}
+
+.kontakt-card .info {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+}
+
+/* ========================================================================== Text Alignment ========================================================================== */
+.justify-text {
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .justify-text {
+        text-align: left;
+    }
+}
+
+/* ========================================================================== Impressum Section ========================================================================== */
+#impressum {
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+#impressum p {
+    margin-bottom: 1rem;
+    color: var(--fg-muted);
+}
+
+#impressum a:hover {
+    color: var(--primary);
+}
+
+/* ========================================================================== Responsive ========================================================================== */
+@media (max-width: 1280px) {
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    section {
+        padding: .5rem 1rem;
+    }
+
+    .sc-content p.zitat {
+        padding: 1.5rem;
+    }
+}
