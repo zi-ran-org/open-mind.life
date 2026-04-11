@@ -7,3 +7,5 @@ admin.php
 install-instructions.txt
 login-white-label.psd
 toolbar-white-label.psd
+/images
+.DS_Store
