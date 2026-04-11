@@ -92,7 +92,7 @@ nav .sc-nav a:focus {
 }
 
 nav .sc-nav a.current {
-    color: #2980b9;
+    color: var(--primary);
 }
 
 @media (max-width: 1050px) {
