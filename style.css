@@ -401,6 +401,11 @@ footer .admin-link {
     margin-top: 1rem;
 }
 
+.angebot-card img {
+    margin: 0 auto !important;
+    display: block;
+}
+
 @media (max-width: 1024px) {
     .hero-grid {
         grid-template-columns: 1fr;
@@ -434,9 +439,7 @@ footer .admin-link {
     }
 
     .angebot-card img {
-        margin: 0 auto !important;
         width: 100% !important;
-        display: block;
     }
 }
 
