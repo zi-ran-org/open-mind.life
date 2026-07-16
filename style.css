@@ -165,11 +165,15 @@ nav .sc-nav .sub-menu li {
     nav .sc-nav a {
         flex-basis: auto;
         margin-right: 1em;
-        margin-top: 100em;
+        margin-top: 0.3em;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.6s, visibility 0.1s;
     }
 
     nav.nav-open .sc-nav a {
-        margin-top: 0.3em;
+        visibility: visible;
+        opacity: 1;
     }
 }
 
