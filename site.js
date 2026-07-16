@@ -79,4 +79,22 @@ document.addEventListener("DOMContentLoaded", function () {
             link.href = "/admin.php?scpage=" + page;
         }
     });
+
+    // Add a hidden sub-menu to "Angebote" in the main navigation, shown on hover or focus
+    if (!window.sitecakeGlobals) {
+        var angeboteLink = document.querySelector('nav .sc-nav a[href="angebote.html"]');
+        angeboteLink.style.anchorName = "angebote-link";
+        angeboteLink.style.position = "relative"; // Ensure the link is positioned for the sub-menu
+        if (angeboteLink) {
+            var subMenu = document.createElement("ul");
+            subMenu.className = "sub-menu";
+            subMenu.innerHTML = `
+            <li><a href="uebungsgruppen.html">Übungsgruppen</a></li>
+            <li><a href="inhouse.html">Inhouse-Seminare</a></li>
+            <li><a href="seminare.html">Seminare &amp; Einführungen</a></li>
+            <li><a href="coaching.html">Coaching / Paarcoaching</a></li>
+        `;
+            angeboteLink.appendChild(subMenu);
+        }
+    }
 });

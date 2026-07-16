@@ -60,7 +60,7 @@ nav {
     display: none;
 }
 
-nav > a:first-of-type {
+nav>a:first-of-type {
     line-height: 0.85;
     flex-grow: 1;
     font-size: 1.5em;
@@ -68,7 +68,7 @@ nav > a:first-of-type {
     text-align: justify;
 }
 
-nav > a:first-of-type br.desktop-only {
+nav>a:first-of-type br.desktop-only {
     display: inline;
 }
 
@@ -95,11 +95,34 @@ nav .sc-nav a.current {
     color: var(--primary);
 }
 
+nav .sc-nav a:hover>.sub-menu,
+nav .sc-nav a:focus>.sub-menu {
+    display: block;
+}
+
+nav .sc-nav .sub-menu {
+    display: none;
+    font-size: 0.875rem;
+    position: absolute;
+    top: 2em;
+    left: -0.5em;
+    width: max-content;
+    text-align: left;
+    background-color: var(--bg2);
+    list-style: none;
+    padding: 0 0;
+    margin: 0.5em 0;
+    border-radius: var(--radius);
+}
+
+nav .sc-nav .sub-menu li {
+    margin: 0.5em 0.1em;
+}
+
 @media (max-width: 1050px) {
     nav {
         box-sizing: border-box;
         flex-wrap: wrap;
-        overflow: hidden;
         max-height: 4em;
         padding: 1.2em 1.4em;
         transition: max-height 0.4s;
@@ -125,17 +148,17 @@ nav .sc-nav a.current {
         opacity: 1;
     }
 
-    nav > a:first-of-type {
+    nav>a:first-of-type {
         flex: 1 0 calc(100% - 3rem);
         text-align: left;
         white-space: nowrap;
     }
 
-    nav > a:first-of-type br.desktop-only {
+    nav>a:first-of-type br.desktop-only {
         display: none;
     }
 
-    nav > a:first-of-type em {
+    nav>a:first-of-type em {
         letter-spacing: -0.02rem;
     }
 
@@ -298,15 +321,41 @@ section p {
     max-width: 48rem;
 }
 
-.sc-content p.groesser { font-size: 1.25rem; }
-.sc-content p.gross { font-size: 1.5rem; }
-.sc-content p.riesig { font-size: 2rem; }
-.sc-content p.kleiner { font-size: 0.875rem; }
-.sc-content p.klein { font-size: 0.75rem; }
-.sc-content p.blau { color: var(--primary); }
-.sc-content p.links { text-align: left; }
-.sc-content p.zentriert { text-align: center; }
-.sc-content p.rechts { text-align: right; }
+.sc-content p.groesser {
+    font-size: 1.25rem;
+}
+
+.sc-content p.gross {
+    font-size: 1.5rem;
+}
+
+.sc-content p.riesig {
+    font-size: 2rem;
+}
+
+.sc-content p.kleiner {
+    font-size: 0.875rem;
+}
+
+.sc-content p.klein {
+    font-size: 0.75rem;
+}
+
+.sc-content p.blau {
+    color: var(--primary);
+}
+
+.sc-content p.links {
+    text-align: left;
+}
+
+.sc-content p.zentriert {
+    text-align: center;
+}
+
+.sc-content p.rechts {
+    text-align: right;
+}
 
 /* Section Backgrounds */
 #home {
@@ -401,7 +450,7 @@ footer .admin-link {
     margin-top: 1rem;
 }
 
-.angebot-card img {
+.angebot-card img:not(.mobileonly) {
     margin: 0 auto !important;
     display: block;
 }
