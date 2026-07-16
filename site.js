@@ -68,4 +68,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
         });
     }
+
+    // Customize edit links for SiteCake to edit each subpage directly
+    var editLinks = document.querySelectorAll(".admin-link");
+    editLinks.forEach(function (link) {
+        var page = window.location.pathname.split("/").pop();
+        if (page === "" || page === "index.html") {
+            link.href = "/admin.php";
+        } else {
+            link.href = "/admin.php?scpage=" + page;
+        }
+    });
 });
